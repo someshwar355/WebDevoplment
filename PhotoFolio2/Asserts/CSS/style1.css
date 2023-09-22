@@ -1,0 +1,350 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color:#27a776;
+    --secondary-color: #161718;
+}
+body{
+    position: relative;
+}
+/* #icon-2{
+    display: none;
+} */
+
+
+/*section_1 main */
+main{
+    height: 100%;
+    width: 100%;
+}
+
+/*section_2 logo */
+.container-logo
+{
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: gray;
+    background-color:black;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* left-side */
+#logo
+{
+    display: flex;
+    color: white;
+}
+
+#logo h1{
+    font-family: 'Cardo', serif;
+    font-weight: 400;
+}
+
+#logo a
+{
+    display: flex;
+    font-size: xx-large;
+    color: var(--primary-color);
+    margin-right:.4vw;
+    margin-left: 1.5vw;
+    align-items: center;
+}
+
+/*middle-part*/
+#menubar a
+{
+    text-decoration: none;
+    margin-right: 2vw;
+    color: grey;
+    font-size: .9rem;
+}
+
+/* right-side */
+#icon i{
+    margin-right: 1.5vw;
+    cursor: pointer;
+}
+
+#menubar a:hover,#icon i:hover{
+    color:white;
+}
+#button{
+    display: none;
+    color: white;
+    
+}
+/* section_3 about_author */
+.about
+{
+    /* height: 50vh; */
+    padding: 3vw 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color:black;
+}
+
+.about h2{
+    margin-bottom:1vw;
+    color:white ;
+    font-family: 'Cardo', serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+.about h2 span{
+    position: relative;
+    top: 0;
+    z-index: 1;
+    padding: 0.5px;
+    display: inline-block;
+}
+.about h2 span::before{
+    content: "";
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    z-index: -1;
+}
+
+.about h3{
+    color: gray;
+    margin-bottom:2vw;
+    font-weight: 200;
+}
+
+.about button{
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: .9vw 2.5vw;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* section_4 images */
+.img-Container
+{
+    width: 100%;
+    display: grid;
+    /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.5vw;
+    padding: 2vw 1vw;
+    background-color:black;    
+    border-bottom: 1px solid rgba(128, 128, 128, 0.6);
+}
+.images{
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+
+.images img
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+.images:hover img{
+    transform:scale(1.1);
+    transition: 0.3s all ease-in-out;
+}
+
+/* section_5 copyright */
+
+.copyright-section
+{
+    padding: 1vw 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.8);
+    background-color:black;
+}
+
+.copyright-section p
+{
+    margin-bottom: 1vw;
+}
+
+.copyright-section a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.sidenav{
+    display: none;
+}
+/*-------------------------------media-query i-pad/tablet------------------------------------*/
+@media(max-width:768px) {
+
+    #menubar {
+        display: none !important;
+    }
+   #button{
+    display: inline;
+   
+   }
+   .show{
+    display: block;
+    color: white;
+   }
+   
+    .img-Container
+    {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+    .about h2{
+        font-size: 5vw;
+    }
+    .about h3{
+        font-size: 3vw;
+    }
+
+    .sidenav{
+        display: block;
+        position: fixed;
+        width: 0;
+        height: 100%;
+        z-index: 1;
+        top: -70px;
+        right: -100px;
+        background-color: #111;
+        transition: 5s;
+    }
+    .sidenav a{
+        text-decoration: none;
+        display: block;
+        color: white;
+        margin-bottom: 2vw;
+        margin-left: 2vw;
+    }
+    #crossbutton
+      {
+        text-align: left;
+        margin-bottom: 5vw;
+        margin-left: 2vw;
+        margin-top: 15vw;
+      }
+
+}
+
+@media(max-width:480px) {
+
+   
+   .img-Container
+    {
+        display: grid;
+        width: 100%;
+        height: auto;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+        grid-template-columns: 1fr 1fr;
+    }
+    .about h2{
+        font-size: 5vw;
+    }
+    .about h3{
+        font-size: 3vw;
+    }
+}
+
+
+/*-----------------Mobile 480px--------------------------*/
+
+@media(max-width:480px) {
+
+    #menubar {
+        display: none !important;
+        opacity: 0.0;
+    }
+   #button{
+    display: inline;
+   
+   }
+   .show{
+    display: block;
+    color: white;
+   }
+   
+    .img-Container
+    {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr ;
+    }
+    .about h2{
+        font-size: 5vw;
+    }
+    .about h3{
+        font-size: 3vw;
+    }
+
+    .sidenav{
+        display: block;
+        position: fixed;
+        width: 0;
+        height: 100%;
+        z-index: 1;
+        top: -10px;
+        right: -120px;
+        background-color: #111;
+        transition: 5s;
+    }
+    .sidenav a{
+        text-decoration: none;
+        display: block;
+        color: white;
+        margin-bottom: 2vw;
+        margin-left: 7vw;
+        margin-top: 0px;
+
+    }
+    #crossbutton
+      {
+        text-align: left;
+        margin-bottom: 5vw;
+        margin-left: 2vw;
+      }
+
+}
+
+@media(max-width:480px) {
+
+   
+   .img-Container
+    {
+        display: grid;
+        width: 100%;
+        height: auto;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  ;
+        grid-template-columns: 1fr;
+    }
+    .about h2{
+        font-size: 5vw;
+    }
+    .about h3{
+        font-size: 3vw;
+    }
+}
